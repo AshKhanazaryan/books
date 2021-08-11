@@ -1,0 +1,41 @@
+<div class="main">
+    <table class="table" *ngIf="loader; else spinner">
+      <thead>
+      <tr class="text-primary">
+        <th scope="col">#</th>
+        <th scope="col">Book</th>
+        <th scope="col">Author</th>
+        <th scope="col">Genres</th>
+        <th scope="col">Page</th>
+        <th scope="col">Date</th>
+        <th class="d-flex justify-content-end">
+          <button type="text" class="btn btn-primary" (click)="openModal()">Create Book</button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let book of bookService.booksList let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{book.bookName}}</td>
+        <td>{{book.author['author']}}</td>
+        <td>{{book.genres['genres']}}</td>
+        <td>{{book.page}}</td>
+        <td>{{book.date}}</td>
+        <td class="d-flex justify-content-end">
+          <span class="mx-2 text-success">
+            <fa-icon class="cursor" [icon]="faEdit" (click)="sendId(book.id)"></fa-icon>
+          </span>
+          <span class="mx-2 text-danger">
+           <fa-icon class="cursor" [icon]="faTrash" (click)=delete(book.id)></fa-icon>
+          </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-create-edit-data #modal [pageName]="'book'"></app-create-edit-data>
+
+  <ng-template #spinner>
+    <app-loader></app-loader>
+  </ng-template>
+

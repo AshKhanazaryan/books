@@ -1,0 +1,74 @@
+<div #myModal class="container">
+    <div class="content">
+        <h3>{{pageName}}</h3>
+
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+            <ng-container *ngIf="pageName !== 'book'">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">{{pageName}} Name</label>
+                    <input type="text" autocomplete="off" class="form-control" [formControlName]="pageName"
+                        id="exampleFormControlInput1" placeholder="Genres Name">
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="pageName === 'book'">
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Book Name</label>
+                    <input [ngClass]="{ 'is-invalid': formBook.bookName.touched && formBook.bookName.errors }"
+                        autocomplete="off" formControlName="bookName" type="text" class="form-control"
+                        id="exampleFormControlInput1" placeholder="Book Name">
+                    <div *ngIf="formBook.bookName.touched && formBook.bookName.errors" class="invalid-feedback">
+                        <div *ngIf="formBook.bookName.errors.required">Book Name is Required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlSelect1">Choose Genres</label>
+                    <select (change)="changeGenresValue()" [ngClass]="{ 'is-invalid': formBook.genres.touched && formBook.genres.errors }"
+                        formControlName="genres" class="form-control" id="exampleFormControlSelect1">
+                        <option *ngFor="let nameGenres of genres" [ngValue]="nameGenres.id">{{nameGenres?.genres}}</option>
+                    </select>
+                    <div *ngIf="formBook.genres.touched && formBook.genres.errors" class="invalid-feedback">
+                        <div *ngIf="formBook.genres.errors.required">Genres is Required</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlSelect2">Choose Author</label>
+                    <select (change)="changeAuthorValue()" [ngClass]="{ 'is-invalid': formBook.author.touched && formBook.author.errors }"
+                        formControlName="author" class="form-control" id="exampleFormControlSelect2">
+                        <option *ngFor="let nameAuthors of authors" [ngValue]="nameAuthors.id">{{nameAuthors?.author}}</option>
+                    </select>
+                    <div *ngIf="formBook.author.touched && formBook.author.errors" class="invalid-feedback">
+                        <div *ngIf="formBook.author.errors.required">Author is Required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Page Book</label>
+                    <input (input)="checkNum($event)" autocomplete="off"
+                        [ngClass]="{ 'is-invalid': formBook.page.touched && formBook.page.errors }"
+                        formControlName="page" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Page Book">
+                    <div *ngIf="formBook.page.touched && formBook.page.errors" class="invalid-feedback">
+                        <div *ngIf="formBook.page.errors.required">Page Book is Required</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">Year of Publish</label>
+                    <input (input)="checkNum($event)" autocomplete="off"
+                        [ngClass]="{ 'is-invalid': formBook.date.touched && formBook.date.errors }"
+                        formControlName="date" type="text" class="form-control" id="exampleFormControlInput1"
+                        placeholder="Year of Publish">
+                    <div *ngIf="formBook.date.touched && formBook.date.errors" class="invalid-feedback">
+                        <div *ngIf="formBook.date.errors.required">Year of Publish is Required</div>
+                    </div>
+                </div>
+            </ng-container>
+          <div class="d-flex py-2 justify-content-end">
+            <button type="button" class="btn btn-secondary me-2" (click)="close()">Cancel</button>
+            <button type="submit" class="btn btn-success">Save</button>
+          </div>
+        </form>
+    </div>
+</div>

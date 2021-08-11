@@ -1,0 +1,33 @@
+<div class="main">
+    <table class="table" *ngIf="loader; else spinner">
+      <thead>
+      <tr class="text-primary">
+        <th scope="col">#</th>
+        <th scope="col">Genres</th>
+
+        <th class="d-flex justify-content-end">
+          <button type="text" class="btn btn-primary" (click)="openModal()">Create Genres</button>
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let genres of genresService.genresList let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{genres.genres}}</td>
+        <td class="d-flex justify-content-end">
+          <span class="mx-2 text-success">
+            <fa-icon class="cursor" [icon]="faEdit"  (click)="sendId(genres.id)"></fa-icon>
+          </span>
+          <span class="mx-2 text-danger">
+           <fa-icon class="cursor" [icon]="faTrash" (click)=delete(genres.id)></fa-icon>
+          </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <app-create-edit-data #modal [pageName]="'genres'"></app-create-edit-data>
+
+  <ng-template #spinner>
+    <app-loader></app-loader>
+  </ng-template>

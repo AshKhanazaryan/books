@@ -1,0 +1,92 @@
+{
+  "book": [
+    {
+      "id": "0e7ea0ae-5695-456a-a7a0-61db24ba29b6",
+      "bookName": "aaaasadasdsd",
+      "genres": {
+        "id": "0d7350fa-31f6-4240-8537-b255954514fa",
+        "genres": "criminal"
+      },
+      "author": {
+        "id": "e10d9a6e-90b1-4cc8-ae5d-9ded4e3565c9",
+        "author": "testing"
+      },
+      "page": "1212",
+      "date": "2121"
+    },
+    {
+      "id": "93a59354-1722-44fb-b6b3-1f54bc790f63",
+      "bookName": "aaabhhhh",
+      "genres": {
+        "id": "0d7350fa-31f6-4240-8537-b255954514fa",
+        "genres": "criminal"
+      },
+      "author": {
+        "id": "9a03cec5-7a51-4f5b-b9d7-0a2ce09dfc0e",
+        "author": "mark twain"
+      },
+      "page": "12121",
+      "date": "321321"
+    },
+    {
+      "id": "01a66576-62b3-431d-b5e2-a30ebd57f68a",
+      "bookName": "dddd",
+      "genres": {
+        "id": "0d7350fa-31f6-4240-8537-b255954514fa",
+        "genres": "criminal"
+      },
+      "author": {
+        "id": "e10d9a6e-90b1-4cc8-ae5d-9ded4e3565c9",
+        "author": "testing"
+      },
+      "page": "454",
+      "date": "1211"
+    },
+    {
+      "id": "3401acdc-6861-4304-a943-c675a61da6ed",
+      "bookName": "aaaaa",
+      "genres": {
+        "id": "ac626785-e5bd-43ad-8b6a-fe99354ccd48",
+        "genres": "testing"
+      },
+      "author": {
+        "id": "9a03cec5-7a51-4f5b-b9d7-0a2ce09dfc0e",
+        "author": "mark twain"
+      },
+      "page": "12121",
+      "date": "321321"
+    }
+  ],
+  "author": [
+    {
+      "id": "9a03cec5-7a51-4f5b-b9d7-0a2ce09dfc0e",
+      "author": "mark twain"
+    },
+    {
+      "id": "e10d9a6e-90b1-4cc8-ae5d-9ded4e3565c9",
+      "author": "testing jjhj"
+    },
+    {
+      "id": "fb51988f-a751-4b59-bc29-088b18700f9e",
+      "author": "testing testing  testing"
+    }
+  ],
+  "genres": [
+    {
+      "id": "c913dbc1-ae99-468b-ad09-49dc743d82ec",
+      "genres": "musem65"
+    },
+    {
+      "id": "0d7350fa-31f6-4240-8537-b255954514fa",
+      "genres": "criminal"
+    },
+    {
+      "id": "ac626785-e5bd-43ad-8b6a-fe99354ccd48",
+      "genres": "testing testing"
+    },
+    {
+      "id": "4c0854a6-1665-4f7d-a929-d308c7028196",
+      "genres": "testing testing"
+    }
+  ]
+}
