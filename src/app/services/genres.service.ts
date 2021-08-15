@@ -8,7 +8,9 @@ import {v4 as uuidv4} from 'uuid';
 })
 export class GenresService {
   public genresList: LibraryData[] = [];
+
   constructor(private api: BaseApiService) { }
+
     getGenresList(): Observable<any> {
       return this.api.get(`/genres`);
     }

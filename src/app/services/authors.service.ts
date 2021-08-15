@@ -7,7 +7,6 @@ import {LibraryData} from '../models/library';
   providedIn: 'root'
 })
 export class AuthorsService {
-
   public authorsList: LibraryData[] = [];
   constructor(private api: BaseApiService) { }
 

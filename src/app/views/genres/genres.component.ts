@@ -18,14 +18,21 @@ export class GenresComponent implements OnInit {
 
   constructor(
     public genresService: GenresService,
-    private modalService: ModalService) {
+    public modalService: ModalService) {
   }
 
   @ViewChild('modal', {static: false}) modal: CreateEditDataComponent;
 
   ngOnInit(): void {
     this.allGenres();
-  }
+
+    this.modalService.items$.subscribe(res => {
+
+      if (res) {
+        this.genresService.genresList.push(res);
+      }
+    })
+  };
 
   allGenres(): void {
     this.genresService.getGenresList()

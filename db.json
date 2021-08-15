@@ -55,20 +55,56 @@
       },
       "page": "12121",
       "date": "321321"
+    },
+    {
+      "id": "f7f0a8f7-5930-4661-aa09-cd112a5c8e87",
+      "bookName": "gorik",
+      "genres": {
+        "id": "0d7350fa-31f6-4240-8537-b255954514fa",
+        "genres": "criminal"
+      },
+      "author": {
+        "id": "e10d9a6e-90b1-4cc8-ae5d-9ded4e3565c9",
+        "author": "testing jjhj"
+      },
+      "page": "412",
+      "date": "13339"
+    },
+    {
+      "id": "a550779b-d670-4b7d-b52f-2214d5e6e5e3",
+      "bookName": "hhhh",
+      "genres": {
+        "id": "a0f1addf-c2e7-4333-ab86-4451bb727f27",
+        "genres": "opopopo"
+      },
+      "author": {
+        "id": "93a78f5e-a2b1-4048-b2f0-c9ca7b956a7f",
+        "author": "new behavior"
+      },
+      "page": "1212",
+      "date": "1313"
     }
   ],
   "author": [
     {
       "id": "9a03cec5-7a51-4f5b-b9d7-0a2ce09dfc0e",
-      "author": "mark twain"
+      "author": "mark twainop"
     },
     {
-      "id": "e10d9a6e-90b1-4cc8-ae5d-9ded4e3565c9",
-      "author": "testing jjhj"
+      "id": "93a78f5e-a2b1-4048-b2f0-c9ca7b956a7f",
+      "author": "new behavior"
     },
     {
-      "id": "fb51988f-a751-4b59-bc29-088b18700f9e",
-      "author": "testing testing  testing"
+      "id": "2128d686-6e73-4cf7-a748-31b574f36b28",
+      "author": "ttttt1212"
+    },
+    {
+      "id": "22676fc1-9a31-44b5-aead-0070b4838711",
+      "author": "eeee"
+    },
+    {
+      "id": "d35596f9-e48d-4259-8aca-962f09036188",
+      "author": "ppppp"
     }
   ],
   "genres": [
@@ -87,6 +123,14 @@
     {
       "id": "4c0854a6-1665-4f7d-a929-d308c7028196",
       "genres": "testing testing"
+    },
+    {
+      "id": "a0f1addf-c2e7-4333-ab86-4451bb727f27",
+      "genres": "opopopo"
+    },
+    {
+      "id": "a96a1156-bbf5-4f75-bd69-7aa6292f98f5",
+      "genres": "tototot"
     }
   ]
 }

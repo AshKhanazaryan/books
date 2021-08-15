@@ -36,7 +36,7 @@ import { LoaderComponent } from './shared/loader/loader.component';
     MainModule,
     FontAwesomeModule,
     CommonModule,
-    
+
   ],
   providers: [],
   bootstrap: [AppComponent],

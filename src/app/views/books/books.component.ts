@@ -14,18 +14,23 @@ import { CreateEditDataComponent } from '../modal/create-edit-data/create-edit-d
 export class BooksComponent implements OnInit {
   faEdit = faEdit;
   faTrash = faTrash;
-
   public loader: boolean = false;
   constructor(
               public bookService: BookService,
-              private modalService: ModalService) { }
+              public modalService: ModalService) { }
   @ViewChild('modal', {static: false}) modal: CreateEditDataComponent
 
   openModal() {
     this.modal.open();
   }
   ngOnInit(): void {
-    this.allBooks()
+    this.allBooks();
+
+    this.modalService.items$.subscribe(res => {
+      if (res) {
+        this.bookService.booksList.push(res);
+      }
+    })
   }
 
   allBooks(): void {
@@ -33,7 +38,7 @@ export class BooksComponent implements OnInit {
     .subscribe(res => {
       this.loader = true;
       this.bookService.booksList = res;
-    })
+    });
   }
 
   sendId(id: string): void {
@@ -46,7 +51,7 @@ export class BooksComponent implements OnInit {
     .subscribe(res => {
     this.loader = true;
     this.bookService.booksList = this.bookService.booksList.filter( val => val.id !== id);
-   })
+   });
 }
 
 }

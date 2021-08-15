@@ -15,9 +15,10 @@ export class AuthorsComponent implements OnInit {
   faTrash = faTrash;
   public loader: boolean = false;
 
+
   constructor(
     public authorService: AuthorsService,
-    private modalService: ModalService) {
+    public modalService: ModalService) {
   }
 
   @ViewChild('modal', {static: false}) modal: CreateEditDataComponent;
@@ -28,6 +29,12 @@ export class AuthorsComponent implements OnInit {
 
   ngOnInit(): void {
     this.allAuthors();
+    this.modalService.items$.subscribe(res => {
+      if (res) {
+        this.authorService.authorsList.push(res);
+      }
+
+    });
   }
 
   allAuthors(): void {

@@ -130,7 +130,7 @@ export class CreateEditDataComponent implements OnInit, OnDestroy {
   }
 
   onSubmit(): void {
-    console.log(this.id)
+
       if (this.bookForm.invalid) {
       return;
     }
@@ -171,13 +171,7 @@ export class CreateEditDataComponent implements OnInit, OnDestroy {
     } else {
       this.modalService.sendData(`/${this.pageName}`, data)
         .subscribe((res) => {
-          if (this.pageName === 'genres') {
-            this.genresService.genresList.push(res);
-          } else if (this.pageName === 'author') {
-            this.authorsService.authorsList.push(res);
-          } else {
-            this.bookService.booksList.push(res);
-          }
+          this.modalService._items$.next(res);
           this.close();
           this.bookForm.reset();
         });
